@@ -108,7 +108,7 @@ const Resultados = () => {
           }}
         >
           <Box mb={3}>
-            <h3 id="parent-modal-title">{`Resultado terna`}</h3>
+            <h3 id="parent-modal-title">{`Resultados`}</h3>
           </Box>
         </Box>
       </Container>
@@ -139,7 +139,7 @@ const Resultados = () => {
           >
             {Object.entries(ordenCandidatos)[0] && (
               <MediaCard
-                podium={1}
+                podium={4}
                 name={`${obtenerNameCandidato(
                   //@ts-ignore
                   Object.keys(Object.entries(ordenCandidatos)[0][1])[0],
@@ -151,7 +151,7 @@ const Resultados = () => {
             )}
             {Object.entries(ordenCandidatos)[1] && (
               <MediaCard
-                podium={2}
+                podium={4}
                 name={`${obtenerNameCandidato(
                   //@ts-ignore
                   Object.keys(Object.entries(ordenCandidatos)[1][1])[0],
@@ -163,13 +163,49 @@ const Resultados = () => {
             )}
             {Object.entries(ordenCandidatos)[2] && (
               <MediaCard
-                podium={3}
+                podium={4}
                 name={`${obtenerNameCandidato(
                   //@ts-ignore
                   Object.keys(Object.entries(ordenCandidatos)[2][1])[0],
                   profesores
                 ).toUpperCase()} -  ${getVotos(
                   Object.entries(ordenCandidatos)[2][1]
+                )}`}
+              />
+            )}
+            {Object.entries(ordenCandidatos)[3] && (
+              <MediaCard
+                podium={4}
+                name={`${obtenerNameCandidato(
+                  //@ts-ignore
+                  Object.keys(Object.entries(ordenCandidatos)[3][1])[0],
+                  profesores
+                ).toUpperCase()} - ${getVotos(
+                  Object.entries(ordenCandidatos)[3][1]
+                )}`}
+              />
+            )}
+            {Object.entries(ordenCandidatos)[4] && (
+              <MediaCard
+                podium={5}
+                name={`${obtenerNameCandidato(
+                  //@ts-ignore
+                  Object.keys(Object.entries(ordenCandidatos)[4][1])[0],
+                  profesores
+                ).toUpperCase()} -  ${getVotos(
+                  Object.entries(ordenCandidatos)[4][1]
+                )}`}
+              />
+            )}
+            {Object.entries(ordenCandidatos)[5] && (
+              <MediaCard
+                podium={6}
+                name={`${obtenerNameCandidato(
+                  //@ts-ignore
+                  Object.keys(Object.entries(ordenCandidatos)[5][1])[0],
+                  profesores
+                ).toUpperCase()} -  ${getVotos(
+                  Object.entries(ordenCandidatos)[5][1]
                 )}`}
               />
             )}

@@ -37,7 +37,7 @@ export default function MediaCard({
 }) {
   return (
     <Card
-      sx={{ maxWidth: 345, minWidth: 345 }}
+      sx={{ maxWidth: 350, minWidth: 350 }}
       style={{
         margin: "12px",
         borderRadius: "8px",
@@ -70,9 +70,7 @@ export default function MediaCard({
           color: "#fff",
         }}
       >
-        <Typography gutterBottom variant="h6" component="div">
-          {name}
-        </Typography>
+        <h4>{name}</h4>
       </CardContent>
     </Card>
   );

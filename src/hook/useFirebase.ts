@@ -104,7 +104,7 @@ export const useFirebase = () => {
         canVote: false,
         createdAt: new Date(),
         document: documentoProfesor,
-        isCandidate: true,
+        isCandidate: false,
         name: nombreProfesor,
         school: escuelaProfesor,
       };

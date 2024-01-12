@@ -62,6 +62,8 @@ export default function VotacionesModalContainer({
     document: "",
     name: "",
     school: "",
+    phone: "",
+    email: "",
   });
   const [isError, setIsError] = React.useState(false);
   const [isErrorFirebase, setIsErrorFirebase] = React.useState(false);
@@ -93,7 +95,7 @@ export default function VotacionesModalContainer({
         <Box
           sx={{
             ...style,
-            width: "70%",
+            width: "80%",
             justifyContent: "center",
             alignItems: "center",
             display: "flex",
@@ -147,6 +149,30 @@ export default function VotacionesModalContainer({
                 setDatosProfesor({
                   ...datosProfesor,
                   school: event.target.value,
+                })
+              }
+            />
+            <TextField
+              value={datosProfesor?.phone.toUpperCase()}
+              id="outlined-basic"
+              label="Teléfono"
+              variant="outlined"
+              onChange={(event) =>
+                setDatosProfesor({
+                  ...datosProfesor,
+                  phone: event.target.value,
+                })
+              }
+            />
+            <TextField
+              value={datosProfesor?.email.toUpperCase()}
+              id="outlined-basic"
+              label="E-mail"
+              variant="outlined"
+              onChange={(event) =>
+                setDatosProfesor({
+                  ...datosProfesor,
+                  email: event.target.value,
                 })
               }
             />
