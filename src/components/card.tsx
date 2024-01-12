@@ -29,11 +29,13 @@ export default function MediaCard({
   name,
   document,
   podium,
+  image,
 }: {
   id?: string;
   name?: string;
   document?: string;
   podium?: number;
+  image?: string;
 }) {
   return (
     <Card
@@ -46,7 +48,6 @@ export default function MediaCard({
         cursor: "pointer",
         display: "flex",
         justifyContent: "center",
-
         flexDirection: "column",
       }}
     >
@@ -59,8 +60,11 @@ export default function MediaCard({
           marginBottom: "24px",
           marginLeft: "auto",
           marginRight: "auto",
+          marginTop: image ? "24px" : "22px",
+          borderRadius: "50%",
+          border: image ? "2px solid #111" : null,
         }}
-        image={getImage(podium)}
+        image={image ? image : getImage(podium)}
         title="alcaldia"
       />
       <CardContent

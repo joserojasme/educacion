@@ -51,6 +51,15 @@ const obtenerNameCandidato = (id: string, profesores: any) => {
   return name;
 };
 
+const obtenerImagenCandidato = (id: string, profesores: any) => {
+  let image = "";
+  Object.keys(profesores[0][1]).map((key) => {
+    if (profesores[0][1][key]?.document === id) {
+      image = profesores[0][1][key]?.img;
+    }
+  });
+  return image;
+};
 const getVotos = (objeto: any) => {
   let votos;
   for (const clave in objeto) {
@@ -139,6 +148,12 @@ const Resultados = () => {
           >
             {Object.entries(ordenCandidatos)[0] && (
               <MediaCard
+                //@ts-ignore
+                image={`${obtenerImagenCandidato(
+                  //@ts-ignore
+                  Object.keys(Object.entries(ordenCandidatos)[0][1])[0],
+                  profesores
+                )}`}
                 podium={4}
                 name={`${obtenerNameCandidato(
                   //@ts-ignore
@@ -151,6 +166,11 @@ const Resultados = () => {
             )}
             {Object.entries(ordenCandidatos)[1] && (
               <MediaCard
+                image={`${obtenerImagenCandidato(
+                  //@ts-ignore
+                  Object.keys(Object.entries(ordenCandidatos)[1][1])[0],
+                  profesores
+                )}`}
                 podium={4}
                 name={`${obtenerNameCandidato(
                   //@ts-ignore
@@ -163,6 +183,11 @@ const Resultados = () => {
             )}
             {Object.entries(ordenCandidatos)[2] && (
               <MediaCard
+                image={`${obtenerImagenCandidato(
+                  //@ts-ignore
+                  Object.keys(Object.entries(ordenCandidatos)[2][1])[0],
+                  profesores
+                )}`}
                 podium={4}
                 name={`${obtenerNameCandidato(
                   //@ts-ignore
@@ -175,6 +200,11 @@ const Resultados = () => {
             )}
             {Object.entries(ordenCandidatos)[3] && (
               <MediaCard
+                image={`${obtenerImagenCandidato(
+                  //@ts-ignore
+                  Object.keys(Object.entries(ordenCandidatos)[3][1])[0],
+                  profesores
+                )}`}
                 podium={4}
                 name={`${obtenerNameCandidato(
                   //@ts-ignore
@@ -187,6 +217,11 @@ const Resultados = () => {
             )}
             {Object.entries(ordenCandidatos)[4] && (
               <MediaCard
+                image={`${obtenerImagenCandidato(
+                  //@ts-ignore
+                  Object.keys(Object.entries(ordenCandidatos)[4][1])[0],
+                  profesores
+                )}`}
                 podium={5}
                 name={`${obtenerNameCandidato(
                   //@ts-ignore
@@ -199,6 +234,11 @@ const Resultados = () => {
             )}
             {Object.entries(ordenCandidatos)[5] && (
               <MediaCard
+                image={`${obtenerImagenCandidato(
+                  //@ts-ignore
+                  Object.keys(Object.entries(ordenCandidatos)[5][1])[0],
+                  profesores
+                )}`}
                 podium={6}
                 name={`${obtenerNameCandidato(
                   //@ts-ignore

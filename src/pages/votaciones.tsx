@@ -107,6 +107,7 @@ const Votaciones = () => {
                   }
                 >
                   <MediaCard
+                    image={profesores[0][1][key]?.img}
                     key={profesores[0][1][key]?.document}
                     //@ts-ignore
                     id={profesores[0][1][key]?.document}
