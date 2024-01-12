@@ -24,7 +24,7 @@ const Votaciones = () => {
     getFirebaseRTDProfesores();
     getFirebaseRTDVotes();
   }, []);
-
+  console.log("***profesores", profesores);
   return (
     <>
       <Container

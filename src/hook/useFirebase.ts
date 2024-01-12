@@ -92,12 +92,16 @@ export const useFirebase = () => {
     escuelaProfesor,
     documentoCandidato,
     setIsErrorFirebase,
+    phoneProfesor,
+    emailProfesor,
   }: {
     nombreProfesor: string;
     documentoProfesor: string;
     escuelaProfesor: string;
     documentoCandidato: string;
     setIsErrorFirebase: React.Dispatch<React.SetStateAction<boolean>>;
+    phoneProfesor?: string;
+    emailProfesor?: string;
   }) => {
     return new Promise(async (resolve, reject) => {
       const data = {
@@ -107,6 +111,8 @@ export const useFirebase = () => {
         isCandidate: false,
         name: nombreProfesor,
         school: escuelaProfesor,
+        phone: phoneProfesor,
+        email: emailProfesor,
       };
 
       try {

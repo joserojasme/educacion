@@ -39,12 +39,16 @@ interface INestedModal {
     documentoProfesor,
     escuelaProfesor,
     setIsErrorFirebase,
+    phoneProfesor,
+    emailProfesor,
   }: {
     documentoCandidato: string;
     nombreProfesor: string;
     documentoProfesor: string;
     escuelaProfesor: string;
     setIsErrorFirebase: React.Dispatch<React.SetStateAction<boolean>>;
+    phoneProfesor?: string;
+    emailProfesor?: string;
   }) => void;
   profesores: any;
 }
@@ -216,7 +220,9 @@ export default function VotacionesModalContainer({
                 if (
                   datosProfesor?.document?.trim().length === 0 ||
                   datosProfesor?.name?.trim().length === 0 ||
-                  datosProfesor?.school?.trim().length === 0
+                  datosProfesor?.school?.trim().length === 0 ||
+                  datosProfesor?.phone?.trim().length === 0 ||
+                  datosProfesor?.email?.trim().length === 0
                 ) {
                   setIsError(true);
                   return;
@@ -232,6 +238,8 @@ export default function VotacionesModalContainer({
                     documentoProfesor: datosProfesor?.document,
                     escuelaProfesor: datosProfesor?.school,
                     setIsErrorFirebase: setIsErrorFirebase,
+                    phoneProfesor: datosProfesor.phone,
+                    emailProfesor: datosProfesor.email,
                   });
                 } catch (error) {
                   // Maneja el error
